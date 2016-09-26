@@ -33,5 +33,28 @@ namespace Planejae.UI.Models
         public ProjetoModel()
         {}
 
+        public ProjetoModel(ProjetoBLL.ProjetoRow row)
+        {
+            if (row == null) return;
+
+            this.Nome = row.Nome;
+            this.Descricao = row.Desc_Projeto;
+            this.Dt_Atualiz = row.Dt_Atualiz;
+            //this.Id_Usuario_Atuliz = row.Id_Usuario_Atualiz;
+            this.Id = row.Id_Projeto;
+        }
+
+        public ProjetoBLL.ProjetoRow ToRow()
+        {
+            var newRow = new ProjetoBLL().Projeto.NewProjetoRow();
+
+            newRow.Id_Projeto = this.Id;
+            newRow.Nome = this.Nome;
+            newRow.Desc_Projeto = this.Descricao;
+            newRow.Dt_Atualiz = this.Dt_Atualiz;
+            //newRow.Id_Usuario_Atualiz = this.Id_Usuario_Atuliz;
+
+            return newRow;
+        }
     }
 }

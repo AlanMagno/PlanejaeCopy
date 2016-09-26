@@ -10,10 +10,16 @@ namespace Planejae.UI.Controllers
 {
     public class ProjetoController : Controller
     {
+        #region Propriedade
+        public BLL.Classes.ProjetoBLL Bll = new BLL.Classes.ProjetoBLL();
+        #endregion
+
         //
         // GET: /Projeto/
+        [Authorize(Roles="Gestor")]
         public ActionResult Index()
         {
+            //var listBll = Bll.getAll();
             return View();
         }
 

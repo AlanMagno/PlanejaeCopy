@@ -42,6 +42,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Classes\AtividadeDAL.cs" />
     <Compile Include="Classes\ProcessoDAL.cs" />
+    <Compile Include="Classes\ProjetoDAL.cs" />
     <Compile Include="Classes\ResponsavelDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Connection.cs" />

@@ -399,7 +399,7 @@ namespace Planejae.BLL.Classes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProjetoRow AddProjetoRow(int Id_Projeto, string Desc_Projeto, string Id_Usuario_Atualiz, System.DateTime Dt_Atualiz, string Nome) {
+            public ProjetoRow AddProjetoRow(int Id_Projeto, string Desc_Projeto, int Id_Usuario_Atualiz, System.DateTime Dt_Atualiz, string Nome) {
                 ProjetoRow rowProjetoRow = ((ProjetoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id_Projeto,
@@ -443,7 +443,7 @@ namespace Planejae.BLL.Classes {
                 base.Columns.Add(this.columnId_Projeto);
                 this.columnDesc_Projeto = new global::System.Data.DataColumn("Desc_Projeto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDesc_Projeto);
-                this.columnId_Usuario_Atualiz = new global::System.Data.DataColumn("Id_Usuario_Atualiz", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnId_Usuario_Atualiz = new global::System.Data.DataColumn("Id_Usuario_Atualiz", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId_Usuario_Atualiz);
                 this.columnDt_Atualiz = new global::System.Data.DataColumn("Dt_Atualiz", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDt_Atualiz);
@@ -623,10 +623,10 @@ namespace Planejae.BLL.Classes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Id_Usuario_Atualiz {
+            public int Id_Usuario_Atualiz {
                 get {
                     try {
-                        return ((string)(this[this.tableProjeto.Id_Usuario_AtualizColumn]));
+                        return ((int)(this[this.tableProjeto.Id_Usuario_AtualizColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Id_Usuario_Atualiz\' in table \'Projeto\' is DBNull.", e);

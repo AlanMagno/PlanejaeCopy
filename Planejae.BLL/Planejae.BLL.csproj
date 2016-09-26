@@ -57,6 +57,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProcessoBLL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ProjetoBLL.cs">
+      <DependentUpon>ProjetoBLL.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ProjetoBLL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

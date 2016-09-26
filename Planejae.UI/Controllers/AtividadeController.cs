@@ -10,7 +10,9 @@ namespace Planejae.UI.Controllers
 {
     public class AtividadeController : Controller
     {
+        #region Propriedades
         public BLL.Classes.AtividadeBLL Bll = new BLL.Classes.AtividadeBLL();
+        #endregion
 
         //
         // GET: /Atividade/
