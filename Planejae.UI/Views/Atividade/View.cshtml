@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Planejae.UI.Models.AtividadeModel>
+
+@{
+    ViewBag.Title = "Gerenciar Atividades";
+
+}
+
+<h2>View1</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordred table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiasTermino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlPermiteRetrabalho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlAdicionaProxResponsavel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlAceitaAnexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginInclusao)
+        </th>
+        <th></th>
+    </tr>
+    <tbody class="sortable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiasTermino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlPermiteRetrabalho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlAdicionaProxResponsavel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlAceitaAnexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoginInclusao)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

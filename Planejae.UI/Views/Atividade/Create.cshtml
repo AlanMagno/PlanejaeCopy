@@ -1,0 +1,113 @@
+﻿@model Planejae.UI.Models.AtividadeModel
+
+
+<link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+
+    <div class="divCreate">
+        <div class="body">
+            <h2>Criar Atividade</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <h>AtividadeModel</h>
+                    <hr class="hrBlue" />
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            @Html.LabelFor(model => model.Nome, new { @class = "control-label col-md-10" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control col-md-2" })
+                            @Html.ValidationMessageFor(model => model.Nome)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            @Html.LabelFor(model => model.DiasTermino, new { @class = "control-label col-md-10" })
+                        </div>                        
+                        <div class="col-md-6">
+                            @Html.TextBoxFor(model => model.DiasTermino, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DiasTermino)
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            @Html.LabelFor(model => model.FlPermiteRetrabalho, new { @class = "control-label col-md-10" })
+                        </div>                        
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.FlPermiteRetrabalho, new { @class = "control-label col-md-10" })
+                            @Html.ValidationMessageFor(model => model.FlPermiteRetrabalho)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            @Html.LabelFor(model => model.FlAdicionaProxResponsavel, new { @class = "control-label col-md-10" })
+                        </div>
+                       
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.FlAdicionaProxResponsavel)
+                            @Html.ValidationMessageFor(model => model.FlAdicionaProxResponsavel)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            @Html.LabelFor(model => model.FlAceitaAnexo, new { @class = "control-label col-md-10" })
+                        </div>
+                        
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.FlAceitaAnexo)
+                            @Html.ValidationMessageFor(model => model.FlAceitaAnexo)
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <div class="col-md-5">
+                           @Html.LabelFor(model => model.Responsaveis, new { @class = "control-label col-md-10" })
+                        </div>
+                        
+                        <div class="col-md-6">
+                            @Html.ListBoxFor(x => x.IdsResponsaveis,
+                        new MultiSelectList(Model.Responsaveis, "Id_Usuario", "Login_Usuario"))
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-5">
+                            @Html.LabelFor(model => model.Descricao, new { @class = "control-label col-md-10" })
+                        </div>
+                        
+                        <div class="col-md-6">
+                            @Html.EditorFor(model => model.Descricao)
+                            @Html.ValidationMessageFor(model => model.Descricao)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+       
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

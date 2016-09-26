@@ -13,17 +13,18 @@ namespace Planejae.DAL.Util
 
         private static string StringConnection;
 
-        /*
+        
         private SqlConnectionStringBuilder _connStringLocal =
             new SqlConnectionStringBuilder()
             {
-                DataSource = @"fernandoverago\SQLEXPRESS",
+                //DataSource = @"fernandoverago\SQLEXPRESS",
                 //DataSource = @"LUCAS\SQLEXPRESS",
+                DataSource = @"A e O\SQLEXPRESS",
                 InitialCatalog = "planejae",
                 IntegratedSecurity = true,
                 Pooling = true
             };
-
+        /*
         private  SqlConnectionStringBuilder _connStringAmazon =
             new SqlConnectionStringBuilder()
             {
